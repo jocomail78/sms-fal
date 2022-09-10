@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Fal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="control-buttons">
+        <button id="connection-start">Connect to port</button><br>
+        <button id="read">Start reading</button><br>
+        <button id="write">AT Check</button><br>
+        <button id="close">Close</button><br>
+    </div>
+
+
+    <div class="ezerhuszonnegy absolut" id="sms_part">
+        <div class="balra" id='hiba' style=" width:1024px; height:120px; background-color: #DE0000;">
+            <div class='cell' style='width:1024px; height:120px'>
+                <span class="pointer" style='font-size: 90px;'>~~~0726 310 866~~~</span>
+            </div>
+        </div>
+        <div class='balra' id='sms_container'
+            style='width:1036px; height:598px; padding-bottom: 30px; overflow-y: scroll; overflow-x: scroll;'>
+        </div>
+    </div>
+    <div class="ezerhuszonnegy absolut" id="random_number_part" style="display:none;">
+        <div class="balra" style=" width:1024px; height:748px;">
+            <div class='cell' style='width:1024px; height:448px;'>
+                <span class="" id="winner_number_holder" style='font-size: 500px;'>999</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/serial.js"></script>
+</body>
+
+</html>
