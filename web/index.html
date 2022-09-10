@@ -7,18 +7,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMS Fal</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
 </head>
 
 <body>
     <div class="control-buttons">
-        <button id="connection-start">Connect to port</button><br>
-        <button id="read">Start reading</button><br>
-        <button id="write">AT Check</button><br>
-        <button id="close">Close</button><br>
+        <button id="connection-start">Step 1: Connect to port</button><br>
+        <button id="read">Step 2: Start reading</button><br>
+        <button id="write">Step 3: Start AT Commands</button><br>
+        <button id="toggle-controls">Step 4: Press Ctrl + Space to Show/Hide controls</button><br>
+        <button id="close">At the end: Close port</button><br>
+        <input id="phone-number" type="text" value="~~~0726 310 866~~~">
+    </div>
+
+    <div class="content-holder">
+        <div class="header">
+            <div class="header-phone-number">~~~0726 310 866~~~</div>
+        </div>
+        <div class="content">
+
+        </div>
+        <div class="content content-example">
+            <div class="msg msg-left">
+                <div class="avatar">
+                    <img src="https://avatars.dicebear.com/api/micah/0726310866.svg">
+                </div>
+                <p class="text">
+                    Lorem ipsum elso
+                </p>
+            </div>
+            <div class="msg msg-right">
+                <div class="avatar">
+                    <img src="https://avatars.dicebear.com/api/micah/0726310866.svg">
+                </div>
+                <p class="text">
+                    Lorem ipsum masodik
+                </p>
+            </div>
+            <div class="msg msg-left">
+                <div class="avatar">
+                    <img src="https://avatars.dicebear.com/api/micah/0726310866.svg">
+                </div>
+                <p class="text">
+                    Lorem ipsum harmadik
+                </p>
+            </div>
+            <div class="msg msg-right">
+                <div class="avatar">
+                    <img src="https://avatars.dicebear.com/api/micah/0726310866.svg">
+                </div>
+                <p class="text">
+                    Lorem ipsum negyedik
+                </p>
+            </div>
+            <div class="msg msg-left">
+                <div class="avatar">
+                    <img src="https://avatars.dicebear.com/api/micah/0726310866.svg">
+                </div>
+                <p class="text">
+                    Lorem ipsum otodik
+                </p>
+            </div>
+            <div class="msg msg-right">
+                <div class="avatar">
+                    <img src="https://avatars.dicebear.com/api/micah/0726310866.svg">
+                </div>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam magna nec justo feugiat
+                    tristique. Quisque sit amet sollicitudin dui. Proin eget mi quis augue fringilla ultrices. Aenean
+                    sed lorem hendrerit, venenatis nunc eu, accumsan dui. Morbi mi ante, varius in pharetra sit amet,
+                    interdum quis purus. Donec vitae mauris eu velit fringilla dignissim. Curabitur elementum aliquam
+                    erat, eu ultricies neque malesuada eu. Aenean vel hendrerit libero, vel accumsan tellus. Nunc vitae
+                    arcu ut velit tempus tempor. Donec non interdum lorem, eu varius ligula. Donec at lorem ac quam
+                    sagittis tempor a in mauris. Pellentesque eget dignissim mi. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit.
+                </p>
+            </div>
+        </div>
+
     </div>
 
 
-    <div class="ezerhuszonnegy absolut" id="sms_part">
+
+    <!-- <div class="ezerhuszonnegy absolut" id="sms_part">
         <div class="balra" id='hiba' style=" width:1024px; height:120px; background-color: #DE0000;">
             <div class='cell' style='width:1024px; height:120px'>
                 <span class="pointer" style='font-size: 90px;'>~~~0726 310 866~~~</span>
@@ -34,11 +105,12 @@
                 <span class="" id="winner_number_holder" style='font-size: 500px;'>999</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
     <script src="js/jquery.js"></script>
+    <script src="js/decode.js"></script>
     <script src="js/serial.js"></script>
 </body>
 
