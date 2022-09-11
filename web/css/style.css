@@ -34,13 +34,13 @@ body {
 }
 
 .msg {
-    width: 70vw;
-    min-height: 17vh;
+    width: 60vw;
+    min-height: 15vh;
     border-radius: 5vh;
     background-color: deeppink;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
     display: inline-table;
-    padding: 1em;
+    padding: 1vh;
 }
 
 .msg-right {
