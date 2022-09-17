@@ -14,14 +14,14 @@ body {
     left: 0;
     width: 100%;
     height: 13vh;
-    background-color: #686868;
+    background-color: #231F20;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .header-phone-number {
-    color: #D1D3D4;
+    color: whitesmoke;
     font-size: 4em;
 }
 
@@ -37,7 +37,7 @@ body {
     width: 60vw;
     min-height: 15vh;
     border-radius: 5vh;
-    background-color: deeppink;
+    background-color: #CDFFCC;
     margin-bottom: 1vh;
     display: inline-table;
     padding: 1vh;
@@ -45,7 +45,7 @@ body {
 
 .msg-right {
     align-self: flex-end;
-    background-color: deepskyblue;
+    background-color: #90ED92;
 }
 
 .avatar {
@@ -61,6 +61,7 @@ body {
 
 .text {
     text-align: justify;
+    font-weight: bold;
     font-size: 25px;
     margin-block-end: 0;
     margin-block-start: 0;

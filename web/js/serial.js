@@ -199,33 +199,74 @@ function processDataFlow(dataFlow) {
             console.log(phoneNumber);
             console.log(smsMessage);
 
-            smsMessage = censure(smsMessage);
-
-            if (messageCounter % 2 == 0) {
-                leftOrRight = 'msg-left';
-            } else {
-                leftOrRight = 'msg-right';
-            }
-
-            let messageTemplate = `
-            <div id="msg-counter-${messageCounter}" class="msg ${leftOrRight}">
-                <div class="avatar">
-                    <img src="https://avatars.dicebear.com/api/micah/${phoneNumber}.svg">
-                </div>
-                <p class="text">
-                    ${smsMessage}
-                </p>
-            </div>
-            `;
-
-            $('.content').prepend(messageTemplate);
-            increaseFontSize("#msg-counter-" + messageCounter);
+            showMessage(smsMessage, phoneNumber, messageCounter);
 
         }
     });
 }
 
+function showMessage(smsMessage, phoneNumber, messageCounter) {
+    smsMessage = censure(smsMessage);
+
+    if (messageCounter % 2 == 0) {
+        leftOrRight = 'msg-left';
+    } else {
+        leftOrRight = 'msg-right';
+    }
+
+    let messageTemplate = `
+    <div id="msg-counter-${messageCounter}" class="msg ${leftOrRight}">
+        <div class="avatar">
+            <img src="https://avatars.dicebear.com/api/micah/${phoneNumber}.svg">
+        </div>
+        <p class="text">
+            ${smsMessage}
+        </p>
+    </div>
+    `;
+
+    $('.content').prepend(messageTemplate);
+    increaseFontSize("#msg-counter-" + messageCounter);
+}
+
 function censure(msg) {
+    var lower = msg.toLowerCase();
+    let beginning = lower;
+    let notAllowed =
+    {
+        "fasz": "traktor",
+        "fasszopo": "tancos komikus",
+        "buzi": "palacsinta",
+        "kurva": "rozsa",
+        "dugni": "lapatolni",
+        "dug": "sarval",
+        "picsa": "makaroni",
+        "segg": "kosztum",
+        "szopik": "himez",
+        "szop": "fog",
+        "basz": "kapal",
+        "bassz": "kapalj",
+        "pina": "hagyma",
+        "pula": "piciorul",
+        "fut": "arunc",
+        "cur": "minge",
+    }
+
+    Object.entries(notAllowed).forEach(entry => {
+        const [key, value] = entry;
+        if (lower.includes(key)) {
+            lower = lower.replace(key, value);
+        };
+    });
+    if (beginning !== lower) {
+        return lower;
+    }
+    return msg;
+
+}
+
+function censureOld(msg) {
+
     msg = msg.replace("fasz", "traktor");
     msg = msg.replace("fasszopo", "tancos komikus");
     msg = msg.replace("buzi", "palacsinta");
@@ -254,7 +295,9 @@ function increaseFontSize(blockId) {
         baseFontSize += 2;
         $(blockId + ' .text').css('font-size', baseFontSize + 'px');
         newHeight = $(blockId).outerHeight();
-    } while ((newHeight <= height) && (iteration < 100));
+    } while ((newHeight <= height) && (iteration < 80));
+    baseFontSize -= 2;
+    $(blockId + ' .text').css('font-size', baseFontSize + 'px');
 }
 
 function delay(time) {
