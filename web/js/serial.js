@@ -239,6 +239,7 @@ function censure(msg) {
         "buzi": "palacsinta",
         "kurva": "rozsa",
         "dugni": "lapatolni",
+        "geci": "szilvasgomboc",
         "dug": "sarval",
         "picsa": "makaroni",
         "segg": "kosztum",
